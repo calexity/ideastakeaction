@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ideas Take Action</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $.fn.shuffle = function() {
+          $.each(this.get(), function(index, el) {
+            var $el = $(el);
+            var $find = $el.children();
+
+            $find.sort(function() {
+              return 0.5 - Math.random();
+            });
+
+            $el.empty();
+            $find.appendTo($el);
+          });
+        };
+
+        $('.shuffled').shuffle();
+
+        $('.shuffle').click(function() {
+          $('.shuffled').shuffle();
+          return false;
+        });
+
+        $('#tweet').click(function() {
+          var link = $(this);
+          var pitch = $('#pitch');
+          var tweet = $('#idea li:first-child').text() + $('#market li:first-child').text() + '.';
+          link.attr('href', 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweet) + '&url=' + encodeURIComponent('http://ideastakeaction.com'));
+          return true;
+        });
+      });
+    </script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <style>
+      .navbar {
+        background-color: #27aecc;
+      }
+      .navbar-default .navbar-nav>li>a,
+      .navbar-default .navbar-brand {
+        color: #000;
+      }
+      .navbar-default .navbar-nav>li>a:hover,
+      .navbar-default .navbar-brand:hover {
+        color: #fff;
+      }
+      body {
+        padding: 20px;
+        -webkit-user-select: none;  /* Chrome all / Safari all */
+        -moz-user-select: none;     /* Firefox all */
+        -ms-user-select: none;      /* IE 10+ */
+        user-select: none;
+      }
+      .container {
+        width: 75%;
+      }
+      h1 {
+        font-size: 64px;
+        line-height: 80px;
+        cursor: pointer;
+        -ms-word-break: normal;
+        word-break: normal;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+      }
+      a, a:hover, a:active, a:focus {
+        color: #000;
+        text-decoration: none;
+        outline: none;
+      }
+      .actions {
+        display: inline;
+      }
+      h2 li {
+        line-height: inherit;
+      }
+      /*ul {
+        display: inline;
+      }*/
+      #idea li, #market li {
+        display: none;
+      }
+      #idea li:first-child, #market li:first-child {
+        display: inline;
+      }
+      #idea, #market {
+        padding-left: .5rem;
+        padding-right: .5rem;
+      }
+      #tweet:hover {
+        color: #55acee;
+      }
+      select:active, select:hover {
+        outline-color: rgba(39, 174, 204, .5);
+      }
+      .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #f5f5f5;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand shuffle" href="#">Ideas Take Action</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" id="tweet" class="btn btn-lg pull-right" target="_blank"><span class="fa fa-twitter"></span> Tweet this idea</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav> -->
+    <div class="container">
+      <h1 id="pitch" class="shuffle">
+        <ul id="idea" class="unstyled shuffled">
+          <li><h4 style="color:#581845;">Supporting mental health</h4>Talk about mental health with friends and family. Open up about your own struggles.</li>
+          <li><h4 style="color:#581845;">Supporting mental health</h4>Read or share a post about smart gun innovation.</li>
+          <li><h4 style="color:#581845;">Supporting mental health</h4>Volunteer at a local non-profit that provides mental health services.</li>
+          <li><h4 style="color:#900C3F;">Increasing education</h4>Write a blog post or article with your action plan to reduce gun violence.</li>
+          <li><h4 style="color:#C70039;">Increasing tolerance</h4>Donate to a local LGBTQA organization.</li>
+          <li><h4 style="color:#FF5733;">Fostering religious tolerance</h4>Attend a service at a new place of worship.</li>
+        </ul>
+        <div class="actions">
+          <a href="#" class="shuffle pull-left"><h4><span class="fa fa-refresh"></span> Show another</h4></a>
+          <a href="#" id="tweet" class="btn btn-lg pull-right" target="_blank"><h4><span class="fa fa-twitter" style="color:#55acee;"></span> Tweet this idea</h4></a>
+        </div>
+      </h1>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted"><b>Ideas take action.</b> Working to reduce gun violence. One idea at a time.</p>
+      </div>
+    </footer>
+  </body>
+</html>
