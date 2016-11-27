@@ -46,6 +46,12 @@ h1 {
   hyphens: auto;
 }
 
+h3 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: lighter;
+}
+
 a, a:hover, a:active, a:focus {
   color: #000;
   text-decoration: none;
