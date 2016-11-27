@@ -35,7 +35,7 @@
         $('#tweet').click(function() {
           var link = $(this);
           var pitch = $('#pitch');
-          var tweet = $('#idea li:first-child').text() + $('#market li:first-child').text() + '.';
+          var tweet = 'Steps to ' + $('#idea li:first-child').text() + $('#market li:first-child').text() + '.';
           link.attr('href', 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweet) + '&url=' + encodeURIComponent('http://ideastakeaction.com'));
           return true;
         });
@@ -43,77 +43,7 @@
     </script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <style>
-      .navbar {
-        background-color: #27aecc;
-      }
-      .navbar-default .navbar-nav>li>a,
-      .navbar-default .navbar-brand {
-        color: #000;
-      }
-      .navbar-default .navbar-nav>li>a:hover,
-      .navbar-default .navbar-brand:hover {
-        color: #fff;
-      }
-      body {
-        padding: 20px;
-        -webkit-user-select: none;  /* Chrome all / Safari all */
-        -moz-user-select: none;     /* Firefox all */
-        -ms-user-select: none;      /* IE 10+ */
-        user-select: none;
-      }
-      .container {
-        width: 75%;
-      }
-      h1 {
-        font-size: 64px;
-        line-height: 80px;
-        cursor: pointer;
-        -ms-word-break: normal;
-        word-break: normal;
-        -webkit-hyphens: auto;
-        -moz-hyphens: auto;
-        -ms-hyphens: auto;
-        hyphens: auto;
-      }
-      a, a:hover, a:active, a:focus {
-        color: #000;
-        text-decoration: none;
-        outline: none;
-      }
-      .actions {
-        display: inline;
-      }
-      h2 li {
-        line-height: inherit;
-      }
-      /*ul {
-        display: inline;
-      }*/
-      #idea li, #market li {
-        display: none;
-      }
-      #idea li:first-child, #market li:first-child {
-        display: inline;
-      }
-      #idea, #market {
-        padding-left: .5rem;
-        padding-right: .5rem;
-      }
-      #tweet:hover {
-        color: #55acee;
-      }
-      select:active, select:hover {
-        outline-color: rgba(39, 174, 204, .5);
-      }
-      .footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 60px;
-        background-color: #f5f5f5;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <!-- <nav class="navbar navbar-default">
@@ -137,43 +67,42 @@
     <div class="container">
       <h1 id="pitch" class="shuffle">
         <ul id="idea" class="unstyled shuffled">
-          <li><h4 style="color:#581845;">Supporting mental health</h4>Talk about mental health with friends and family. Open up about your own struggles.</li>
-          <li><h4 style="color:#581845;">Supporting mental health</h4>Volunteer at a local non-profit that provides mental health services.</li>
-          <li><h4 style="color:#900C3F;">Increasing education</h4>Write a blog post or article with your action plan to reduce gun violence.</li>
-          <li><h4 style="color:#C70039;">Increasing tolerance</h4>Donate to a local LGBTQA organization.</li>
-          <li><h4 style="color:#FF5733;">Fostering religious tolerance</h4>Attend a service at a new place of worship.</li>
-          <li><h4 style="color:#FF5733;">Increasing education</h4><a href="https://smarttechfoundation.org/smart-gun-news-and-updates/" target="_blank">Read or share a post about smart gun innovation.</a></li>
-          <li><h4 style="color:#FF5733;">Increasing education</h4>Write a letter to your local paper's editor.</li>
-          <li><h4 style="color:#FF5733;">Building community relationships</h4>Hold a public vigil for gun violence victims.</li>
-          <li><h4 style="color:#FF5733;">Increasing tolerance</h4>Donate to a local LGBTQA organization.</li>
-          <li><h4 style="color:#FF5733;">Increasing tolerance</h4>Join a community sports league to meet people outside your social circle.</li>
-          <li><h4 style="color:#FF5733;">Fostering religious tolerance</h4>Observe the service of a different faith than yours.</li>
-          <li><h4 style="color:#FF5733;">Fostering religious tolerance</h4>Read a blog post by someone from a different faith than yours.</li>
-          <li><h4 style="color:#FF5733;">Fostering religious tolerance</h4>Speak at your house of worship or community group about gun reform.</li>
-          <li><h4 style="color:#FF5733;">Mentoring young people</h4>Keep violent films, TV shows and video games away from children.</li>
-          <li><h4 style="color:#FF5733;">Mentoring young people</h4>Get involved in an after-school program.</li>
-          <li><h4 style="color:#FF5733;">Mentoring young people</h4>Become a Big Brother or a Big Sister.</li>
-          <li><h4 style="color:#FF5733;">Mentoring young people</h4>Learn about preventing child access to guns in the home.</li>
-          <li><h4 style="color:#FF5733;">Mentoring young people</h4>Learn about preventing child access to guns in the home.</li>
-          <li><h4 style="color:#FF5733;">Increasing gun safety</h4>Contacting your government representatives to ask them to fight for stricter gun control laws.</li>
-          <li><h4 style="color:#FF5733;">Increasing gun safety</h4>Back a crowdfunding project around gun safety.</li>Ask your local organizations about their gun policies and demand that they publish them.</li>
-          <li><h4 style="color:#FF5733;">Increasing gun safety</h4>Ask your local organizations about their gun policies and demand that they publish them.</li>
-          <li><h4 style="color:#FF5733;">Increasing gun safety</h4>Join a campaign to get companies to ban guns in their stores.</li>
-          <li><h4 style="color:#FF5733;">Increasing gun safety</h4>Volunteer for politicians that support gun reforms.</li>
-          <li><h4 style="color:#FF5733;">Increasing gun safety</h4>Sign the petition for safe gun storage.</li>
-          <li><h4 style="color:#FF5733;">Increasing gun safety</h4>Donate to a Gun Reform Group.</li>
-          <li><h4 style="color:#FF5733;">Increasing gun safety</h4>Sign up for Amazon Smile so that a portion of every purchase you make goes to a Gun Reform Group.</li>
-          <li><h4 style="color:#FF5733;">Advocating for voter participation</h4>Support the League of Women Voters (non-partisan education).</li>
-          <li><h4 style="color:#FF5733;">Advocating for voter participation</h4>Help register people to vote.</li>
-          <li><h4 style="color:#FF5733;">Advocating for voter participation</h4>Challenge the NRA with the coalition to stop gun violence.</li>
-          <li><h4 style="color:#FF5733;">Care for victims and families</h4>Volunteer with the Brady campaign or give them a donation.</li>
-          <li><h4 style="color:#FF5733;">Care for victims and families</h4>Donate to non-profits who care for victims and families.</li>
+          <li><h4 style="color:#B7043E;">Support mental health</h4> Talk about mental health with friends and family. Open up about your own struggles.</li>
+          <li><h4 style="color:#B7043E;">Support mental health</h4> Volunteer at a local non-profit that provides mental health services.</li>
+          <li><h4 style="color:#E57601;">Increase education</h4> Write a blog post or article with your action plan to reduce gun violence.</li>
+          <li><h4 style="color:#FFA600;">Build community</h4> Donate to a local LGBTQA organization.</li>
+          <li><h4 style="color:#652A5B;">Foster religious tolerance</h4> Attend a service at a new place of worship.</li>
+          <li><h4 style="color:#E57601;">Increase education</h4> Read or share a post about smart gun innovation.</li>
+          <li><h4 style="color:#E57601;">Increase education</h4> Write a letter to your local paper's editor.</li>
+          <li><h4 style="color:#FFA600;">Build community</h4> Hold a public vigil for gun violence victims.</li>
+          <li><h4 style="color:#FFA600;">Build community</h4> Donate to a local LGBTQA organization.</li>
+          <li><h4 style="color:#FFA600;">Build community</h4> Join a community sports league to meet people outside your social circle.</li>
+          <li><h4 style="color:#652A5B;">Foster religious tolerance</h4> Observe the service of a different faith than yours.</li>
+          <li><h4 style="color:#652A5B;">Foster religious tolerance</h4> Read a blog post by someone from a different faith than yours.</li>
+          <li><h4 style="color:#652A5B;">Foster religious tolerance</h4> Speak at your house of worship or community group about gun reform.</li>
+          <li><h4 style="color:#3F2D3B;">Mentor young people</h4> Keep violent films, TV shows and video games away from children.</li>
+          <li><h4 style="color:#3F2D3B;">Mentor young people</h4> Get involved in an after-school program.</li>
+          <li><h4 style="color:#3F2D3B;">Mentor young people</h4> Become a Big Brother or a Big Sister.</li>
+          <li><h4 style="color:#3F2D3B;">Mentor young people</h4> Learn about preventing child access to guns in the home.</li>
+          <li><h4 style="color:#047778;">Advocate for voter participation</h4> Ask your representatives to fight for stricter gun control laws.</li>
+          <li><h4 style="color:#99921D;">Increase gun safety</h4> Back a crowdfunding project around gun safety.</li>
+          <li><h4 style="color:#E57601;">Increase education</h4> Ask your local organizations to publish their gun policies.</li>
+          <li><h4 style="color:#047778;">Advocate for voter participation</h4> Join a campaign to get companies to ban guns in their stores.</li>
+          <li><h4 style="color:#047778;">Advocate for voter participation</h4> Volunteer for politicians that support gun reforms.</li>
+          <li><h4 style="color:#99921D;">Increase gun safety</h4> Sign the petition for safe gun storage.</li>
+          <li><h4 style="color:#99921D;">Increase gun safety</h4> Donate to a Gun Reform Group.</li>
+          <li><h4 style="color:#99921D;">Increase gun safety</h4> Sign up for an Amazon Smile that donates to a gun reform group.</li>
+          <li><h4 style="color:#047778;">Advocate for voter participation</h4> Join the League of Women Voters</li>
+          <li><h4 style="color:#047778;">Advocate for voter participation</h4> Help register people to vote.</li>
+          <li><h4 style="color:#047778;">Advocate for voter participation</h4> Challenge the NRA with the coalition to stop gun violence.</li>
+          <li><h4 style="color:#047778;">Care for victims and families</h4> Volunteer with the Brady campaign or give them a donation.</li>
+          <li><h4 style="color:#047778;">Care for victims and families</h4> Donate to non-profits who care for victims and families.</li>
 
         </ul>
       </h1>
       <div class="actions">
-        <a href="#" class="shuffle pull-left"><h4><span class="fa fa-refresh"></span> Show another</h4></a>
-        <a href="#" id="tweet" class="pull-right" target="_blank"><h4><span class="fa fa-twitter" style="color:#55acee;"></span> Tweet this idea</h4></a>
+        <a href="#" id="another" class="btn btn-large shuffle pull-left"><h4><span class="fa fa-refresh"></span> Show another</h4></a>
+        <a href="#" id="tweet" class="btn btn-large pull-right" target="_blank"><h4><span class="fa fa-twitter" style="color:#55acee;"></span> Tweet this idea</h4></a>
       </div>
     </div>
     <footer class="footer">
